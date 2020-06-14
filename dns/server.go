@@ -60,10 +60,7 @@ func ReCreateServer(addr string, resolver *Resolver) error {
 		return err
 	}
 
-	err = sockopt.UDPReuseaddr(p)
-	if err != nil {
-		return err
-	}
+	sockopt.UDPReuseaddr(p)
 
 	address = addr
 	handler := newHandler(resolver)

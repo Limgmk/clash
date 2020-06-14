@@ -23,10 +23,7 @@ func NewSocksUDPProxy(addr string) (*SockUDPListener, error) {
 		return nil, err
 	}
 
-	err = sockopt.UDPReuseaddr(l.(*net.UDPConn))
-	if err != nil {
-		return nil, err
-	}
+	sockopt.UDPReuseaddr(l.(*net.UDPConn))
 
 	sl := &SockUDPListener{l, addr, false}
 	go func() {
