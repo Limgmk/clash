@@ -6,7 +6,6 @@ import (
 
 var (
 	errPayload = errors.New("payload error")
-	errParams  = errors.New("params error")
 
 	noResolve = "no-resolve"
 )
